@@ -1,0 +1,16 @@
+#products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.productCard {
+    margin: 5%;
+}
+
+.productImage {
+    width: 240px;
+    height: 180px;
+}
