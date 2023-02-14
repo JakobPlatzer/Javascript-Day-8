@@ -92,10 +92,10 @@ function createCartInHTML() {
     for (let val of cart) {
         document.getElementById("cart").innerHTML += `<div  style="display:flex;align-items: center; justify-content: space-around">
         <p>${val.name}</p>
-        <p><img src="images/${val.image}" width="100"></p>
+        <p><img src="${val.image}" width="100"></p>
         <p>${val.price}</p>
         <p><p class="minus">-</p>  <span class="qtty">${val.qtty}</span> <p class="plus">+</p> <p class="delete">X</p></p>
-        </div>`
+        </div>`;
     }
 
     let plusBtns = document.getElementsByClassName("plus");
