@@ -69,31 +69,25 @@ let cart = [];
 let cartBtns = document.getElementsByClassName("addToCart");
 console.log(cartBtns)
 
-// gives every addToCart button the ability to envoke the addtocart function
+// gives every addToCart button the ability to envoke the addToCart function
 
 for (let i = 0; i < cartBtns.length; i++) {
-    cartBtns[i].addEventListener("click", addToCart(flowers[i]));
+    cartBtns[i].addEventListener("click", function () {
+        addToCart(flowers[i])});
     total();
-}
-
-function total() {
-    let totalPrice = 0;
-    for (let val of cart) {
-        totalPrice = totalPrice + (val.price*val.qtty);
-    } 
-    console.log(totalPrice);
 }
 
 function addToCart(obj) {
     if (cart.find(function(val) {return val.name == obj.name})) {
-        obj.qtty++
+        obj.qtty++;
     } else {
-    cart.push(obj);
+        cart.push(obj);
 }
-    createCartInHTML;
+    createCartInHTML();
+    console.log(cart);
 }
 
-function createCartInHTML () {
+function createCartInHTML() {
     document.getElementById("cart").innerHTML = "";
     for (let val of cart) {
         document.getElementById("cart").innerHTML += `<div  style="display:flex;align-items: center; justify-content: space-around">
@@ -136,3 +130,10 @@ function createCartInHTML () {
     }
 }
 
+function total() {
+    let totalPrice = 0;
+    for (let val of cart) {
+        totalPrice = totalPrice + (val.price*val.qtty);
+    } 
+    console.log(totalPrice);
+}

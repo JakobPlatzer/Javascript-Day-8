@@ -39,7 +39,7 @@ for (let i = 0; i < btns.length; i++) {
 
 
 function addToCart(obj) { //  html course
-    if (cart.find(function(val) { return val.name == obj.name })) { // () => 
+    if (cart.find(function(val) { return val.name == obj.name })) { 
         obj.qtty++;
     } else {
         cart.push(obj);
